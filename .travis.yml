@@ -87,6 +87,9 @@ before_script:
 # Main build & test - rarely overridden - controlled by TEST_CMD
 script:
   - ls -lh /dev/kvm
+  - egrep -c ' lm ' /proc/cpuinfo
+  - egrep -c '^flags.*(vmx|svm)' /proc/cpuinfo
+  - kvm-ok
   - virt-host-validate
   - BUILD_RC=0 && make -j${JOBS} || BUILD_RC=$?
   - |
