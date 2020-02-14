@@ -88,6 +88,8 @@ before_script:
 # Main build & test - rarely overridden - controlled by TEST_CMD
 script:
   - ls -lh /dev/kvm
+  - sudo modprobe kvm
+  - sudo modprobe kvm-amd
   - sudo modprobe kvm-intel
   - egrep -c ' lm ' /proc/cpuinfo
   - egrep -c '^flags.*(vmx|svm)' /proc/cpuinfo
