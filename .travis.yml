@@ -62,7 +62,8 @@ env:
     - BUILD_DIR="build"
     - BASE_CONFIG="--disable-docs --disable-tools"
     - TEST_BUILD_CMD=""
-    - TEST_CMD="make check V=1"
+    #- TEST_CMD="make check V=1"
+    - TEST_CMD="x86_64-softmmu/qemu-system-x86_64 -enable-kvm -nographic"
     # This is broadly a list of "mainline" softmmu targets which have support across the major distros
     - MAIN_SOFTMMU_TARGETS="x86_64-softmmu"
     - CCACHE_SLOPPINESS="include_file_ctime,include_file_mtime"
