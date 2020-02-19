@@ -85,6 +85,7 @@ before_script:
   - mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR}
   - ${SRC_DIR}/configure ${BASE_CONFIG} ${CONFIG} || { cat config.log && exit 1; }
 
+
 # Main build & test - rarely overridden - controlled by TEST_CMD
 script:
   - ls -lh /dev/kvm
